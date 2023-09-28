@@ -36,11 +36,6 @@ export function UpdateProfile(props) {
     updateProfile(fd);
   };
 
-  const handleFile = () => {
-    const target = document.getElementById("file");
-    target.click();
-  };
-
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Body>
@@ -56,12 +51,7 @@ export function UpdateProfile(props) {
             </svg>
           </div>
           <p className="title">Edit Profile</p>
-          <img
-            src="/Image/88.png"
-            alt=""
-            className="profile_image"
-            onClick={() => handleFile()}
-          />
+          <img src="/Image/88.png" alt="" className="profile_image" />
 
           <form onSubmit={handleSubmit}>
             <input

@@ -15,7 +15,7 @@ export function UpdateProfile(props) {
   const [state, setState] = useState("");
   const [district, setDistrict] = useState("");
   const [pinCode, setPinCode] = useState("");
-  const [profilePicture, setProfilePicture] = useState("");
+  const [ profilePicture , setProfilePicture ] = useState("")
 
   const fd = new FormData();
   fd.append("name", name);
@@ -29,16 +29,11 @@ export function UpdateProfile(props) {
   fd.append("state", state);
   fd.append("district", district);
   fd.append("pinCode", pinCode);
-  fd.append("profilePicture", profilePicture);
+  fd.append("pinCode", pinCode);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     updateProfile(fd);
-  };
-
-  const handleFile = () => {
-    const target = document.getElementById("file");
-    target.click();
   };
 
   return (
@@ -56,20 +51,9 @@ export function UpdateProfile(props) {
             </svg>
           </div>
           <p className="title">Edit Profile</p>
-          <img
-            src="/Image/88.png"
-            alt=""
-            className="profile_image"
-            onClick={() => handleFile()}
-          />
+          <img src="/Image/88.png" alt="" className="profile_image" />
 
           <form onSubmit={handleSubmit}>
-            <input
-              type="file"
-              id="file"
-              onChange={(e) => setProfilePicture(e.target.files[0])}
-              style={{ display: "none" }}
-            />
             <div className="three-sec">
               <input
                 type="text"
@@ -99,7 +83,7 @@ export function UpdateProfile(props) {
               className="signle_input"
               onChange={(e) => setEmail(e.target.value)}
             />
-
+          
             <input
               type="text"
               placeholder="First line address"
